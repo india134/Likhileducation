@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Likhil Education | Math, Statistics & AI Tutor</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+
+    <style>
+        /* COLOR PALETTE & THEME */
+        :root {
+            --primary-color: #2563eb; /* Bright Blue */
+            --dark-color: #0f172a;    /* Dark Navy for Text */
+            --light-bg: #f8fafc;      /* Very Light Gray for Backgrounds */
+            --white: #ffffff;
+            --text-muted: #64748b;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--dark-color);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-weight: 700;
+            color: var(--dark-color);
+        }
+
+        /* NAVBAR */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        .btn-main {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: none;
+            transition: transform 0.2s;
+        }
+        .btn-main:hover {
+            background-color: #1d4ed8;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            /* Using a gradient overlay to ensure text is readable */
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 140px 0 80px;
+            color: white;
+            text-align: center;
+        }
+        .hero-section h1 {
+            color: white; /* Force white text */
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .hero-section p {
+            color: #cbd5e1; /* Light gray text */
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        /* STATS SECTION */
+        .stats-section {
+            background-color: var(--primary-color);
+            padding: 60px 0;
+            color: white;
+        }
+        .stats-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+        .stats-box h2 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
+        .stats-box p {
+            margin: 0;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 80px 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+        }
+        .line {
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        /* ABOUT SECTION */
+        .profile-img {
+            border-radius: 15px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        /* COURSE CARDS */
+        .course-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s;
+            height: 100%;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary-color);
+        }
+        .course-body {
+            padding: 25px;
+        }
+        .course-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        /* RESULTS GRID */
+        .result-item {
+            background: var(--light-bg);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* TESTIMONIALS */
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px;
+            border: 1px solid #f1f5f9;
+        }
+        .stars {
+            color: #f59e0b; /* Amber/Gold color */
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--dark-color);
+            color: #94a3b8;
+            padding: 50px 0 20px;
+        }
+        footer a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+        footer a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <i class="bi bi-mortarboard-fill me-2"></i>Likhil Education
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="#courses">Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+                <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                <li class="nav-item ms-lg-2">
+                    <a class="btn btn-main" href="#contact">Book Demo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="hero-section d-flex align-items-center">
+    <div class="container">
+        <h1>Master Math & AI with<br>Industry Experts</h1>
+        <p>Personalized tutoring in Math, Statistics, and Artificial Intelligence for students aiming for Ivy League, IITs, and Global Universities.</p>
+        <div>
+            <a href="#courses" class="btn btn-light btn-lg me-3 rounded-pill fw-bold text-primary">Explore Courses</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill fw-bold">Contact Tutor</a>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="stats-box">
+                    <h2 class="counter" data-target="6">0</h2>
+                    <p>Countries Taught</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-box">
+                    <h2 class="counter" data-target="200">0</h2>
+                    <p>Students Mentored</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="stats-box">
+                    <h2 class="counter" data-target="5">0</h2>
+                    <p>Years Experience</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-lg-0 text-center">
+                <img src="Akash_Professional.png" alt="Akash Gupta" class="profile-img">
+            </div>
+            <div class="col-lg-7">
+                <span class="text-primary fw-bold text-uppercase">The Mentor</span>
+                <h2 class="mb-3">Meet Akash Gupta</h2>
+                <h5 class="text-muted mb-4">B.Tech (IIT BHU) | Masters in AI (IIT Kharagpur)</h5>
+                <p>Likhil Education is a specialized venture bridging the gap between academic theory and industry application. With 5 years of experience, I believe every student can excel in mathematics and data science.</p>
+                <p>My teaching methodology focuses on <strong>concept clarity</strong> rather than rote memorization. Whether you are preparing for AP Exams, IBDP, or building a foundation in AI, I tailor every session to your unique learning pace.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-3">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i> Personalized 1:1 Sessions
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <i class="bi bi-check-circle-fill text-primary me-2"></i> Global Curriculum (AP/IB/CBSE)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="courses" style="background-color: var(--light-bg);">
+    <div class="container">
+        <div class="section-header">
+            <h2>Our Programs</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-3">
+                <div class="course-card">
+                    <div class="course-body text-center">
+                        <i class="bi bi-graph-up course-icon"></i>
+                        <h5>AP Statistics</h5>
+                        <p class="text-muted small">Master data analysis, probability, and inference. Tailored for College Board exams.</p>
+                        <a href="#contact" class="btn btn-outline-primary btn-sm w-100 mt-3">Enquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="course-card">
+                    <div class="course-body text-center">
+                        <i class="bi bi-calculator course-icon"></i>
+                        <h5>AP Calculus</h5>
+                        <p class="text-muted small">Deep dive into limits, derivatives, and integrals (AB & BC). Structured problem solving.</p>
+                        <a href="#contact" class="btn btn-outline-primary btn-sm w-100 mt-3">Enquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="course-card">
+                    <div class="course-body text-center">
+                        <i class="bi bi-globe course-icon"></i>
+                        <h5>IBDP Math</h5>
+                        <p class="text-muted small">Analysis & Approaches (AA) & Applications (AI). SL & HL support with IA guidance.</p>
+                        <a href="#contact" class="btn btn-outline-primary btn-sm w-100 mt-3">Enquire</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="course-card">
+                    <div class="course-body text-center">
+                        <i class="bi bi-robot course-icon"></i>
+                        <h5>AI for CBSE</h5>
+                        <p class="text-muted small">Complete syllabus coverage for CBSE Artificial Intelligence (Class 9-12). Practical Python & Theory.</p>
+                        <a href="#contact" class="btn btn-outline-primary btn-sm w-100 mt-3">Enquire</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="results">
+    <div class="container">
+        <div class="section-header">
+            <h2>Student Results</h2>
+            <div class="line"></div>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4 col-sm-6">
+                <div class="result-item text-center">
+                    <h3 class="text-primary fw-bold">5/5</h3>
+                    <p class="fw-bold mb-0">Nate D.</p>
+                    <small class="text-muted">AP Calculus BC</small>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="result-item text-center">
+                    <h3 class="text-primary fw-bold">5/5</h3>
+                    <p class="fw-bold mb-0">Prajit Basu</p>
+                    <small class="text-muted">AP Calculus BC</small>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="result-item text-center">
+                    <h3 class="text-primary fw-bold">5/5</h3>
+                    <p class="fw-bold mb-0">Nate D.</p>
+                    <small class="text-muted">AP Pre-Calculus BC</small>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="result-item text-center">
+                    <h3 class="text-primary fw-bold">5/5</h3>
+                    <p class="fw-bold mb-0">Sankalp Imadishetty</p>
+                    <small class="text-muted">AP Precalculus</small>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="result-item text-center">
+                    <h3 class="text-primary fw-bold">4/5</h3>
+                    <p class="fw-bold mb-0">Adit srivastava</p>
+                    <small class="text-muted">AP Calculus BC</small>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="result-item text-center">
+                    <h3 class="text-primary fw-bold">4/5</h3>
+                    <p class="fw-bold mb-0">Nitya Potukuchi</p>
+                    <small class="text-muted">AP Statistics</small>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <div class="result-item text-center">
+                    <h3 class="text-primary fw-bold">4/5</h3>
+                    <p class="fw-bold mb-0">Virat Ansh Anand</p>
+                    <small class="text-muted">AP Calculus AB</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" style="background-color: var(--light-bg);">
+    <div class="container">
+        <div class="section-header">
+            <h2>What Parents & Students Say</h2>
+            <div class="line"></div>
+        </div>
+
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card text-center">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <p class="fst-italic">"One of the best tutors for math in the world and I’ve spent hundreds of dollars across many tutors. Could not recommend Akash more to anyone. He is one of the most passionate and gifted teachers I’ve ever met. He would go the extra mile to make sure you do well on exams."</p>
+                                <h6 class="fw-bold mt-3">Austin Ho</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card text-center">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <p class="fst-italic">"I wanted to take a moment to express my deep appreciation for your exceptional teaching in AP Calculus AB this year. Your dedication and passion for the subject have truly made a profound impact on my daughter’s understanding and love for mathematics. Your clear explanations and patience are unmatched."</p>
+                                <h6 class="fw-bold mt-3">Suman Akella</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card text-center">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <p class="fst-italic">"Akash Sir has been teaching my daughter IB HL maths. He is an excellent teacher, very knowledgeable of the demands of the IB curriculum. His resources for online teaching make it easy and fun to learn even difficult concepts. He is very patient and understanding."</p>
+                                <h6 class="fw-bold mt-3">Anita Kapoor</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card text-center">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <p class="fst-italic">"My son took math classes and improved his scores studying under Akash. He gained confidence in studying a tough subject like calculus."</p>
+                                <h6 class="fw-bold mt-3">Anand Rajarethinam</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card text-center">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <p class="fst-italic">"Akash is a very passionate, knowledgeable, experienced and dedicated teacher. Ensures follow up and reports progress. We took grade 12 Mathematics in Data Management and SAT preparation classes. He truly cares for his students and makes a huge impact."</p>
+                                <h6 class="fw-bold mt-3">Rohit Behl</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card text-center">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <p class="fst-italic">"I had a good experience learning math with Akash Sir through online tuition. He explained concepts in a way that made them easy to understand and even made math interesting. Thanks to his guidance, I feel much more confident in math now."</p>
+                                <h6 class="fw-bold mt-3">Savini N Khongrymai</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card text-center">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <p class="fst-italic">"Your patience, encouragement, and dedication have made all the difference in my son’s progress. Thank you very much Sir for all the time and attention."</p>
+                                <h6 class="fw-bold mt-3">Deepika</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card text-center">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <p class="fst-italic">"Akash is an excellent tutor. His patient ways and thorough subject knowledge helped my son gain interest in Maths. I still remember my son saying, 'I wish he had Akash as his teacher for years.'"</p>
+                                <h6 class="fw-bold mt-3">Archana Joshi</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="carousel-item">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="testimonial-card text-center">
+                                <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                                <p class="fst-italic">"One of the things I really appreciated was how he went above and beyond to support, even outside of the regular tutoring hours, and provided extra resources like practice problems."</p>
+                                <h6 class="fw-bold mt-3">Preeti Choudhary</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-primary rounded-circle" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-primary rounded-circle" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="bg-white p-4 p-md-5 rounded shadow">
+                    <div class="text-center mb-4">
+                        <h2>Get in Touch</h2>
+                        <p class="text-muted">Email: <a href="mailto:likhileducation@gmail.com">likhileducation@gmail.com</a></p>
+                    </div>
+                    
+                    <form action="https://formspree.io/f/xyzpjanj" method="POST">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Full Name</label>
+                                <input type="text" name="name" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Phone</label>
+                                <input type="text" name="phone" class="form-control">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Subject of Interest</label>
+                            <select class="form-select" name="course">
+                                <option>AP Statistics</option>
+                                <option>AP Calculus (AB/BC)</option>
+                                <option>IBDP Math</option>
+                                <option>AI for CBSE</option>
+                                
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Message</label>
+                            <textarea class="form-control" name="message" rows="4"></textarea>
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-main btn-lg">Send Message</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white">Likhil Education</h5>
+                <p>Bridging the gap between academic math and industry-level Artificial Intelligence.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white">Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white">Contact</h5>
+                <p><i class="bi bi-envelope me-2"></i> likhileducation@gmail.com</p>
+                <p><i class="bi bi-whatsapp me-2"></i> +91 7752958215</p>
+            </div>
+        </div>
+        <hr style="border-color: #334155;">
+        <div class="text-center small">
+            &copy; 2025 Likhil Education. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if(target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Number Counter Animation
+    const counters = document.querySelectorAll('.counter');
+    let hasCounted = false;
+
+    const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !hasCounted) {
+                hasCounted = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const increment = target / 50; 
+                    let c = 0;
+                    const updateCounter = () => {
+                        c += increment;
+                        if(c < target) {
+                            counter.innerText = Math.ceil(c);
+                            setTimeout(updateCounter, 30);
+                        } else {
+                            counter.innerText = target + "+";
+                        }
+                    };
+                    updateCounter();
+                });
+            }
+        });
+    });
+
+    const statsSection = document.querySelector('.stats-section');
+    if(statsSection) countObserver.observe(statsSection);
+
+</script>
+</body>
+</html>
