@@ -334,8 +334,10 @@ footer a:hover { color: var(--gold); }
 .who { padding: 30px 26px; border: 1px solid var(--line); border-radius: var(--radius); background: #fff; }
 .who h3 { font-size: 1.25rem; margin-bottom: 10px; }
 .who p { color: var(--muted); font-size: 15px; }
-.topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-top: 50px; }
-.topic { background: #fff; padding: 30px 28px; }
+/* Dividers are drawn per cell (right + bottom) and the outer edge is clipped,
+   so an incomplete last row leaves clean white space instead of a grey block. */
+.topic-grid { display: grid; grid-template-columns: repeat(3, 1fr); background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-top: 50px; }
+.topic { padding: 30px 28px; box-shadow: 1px 0 0 var(--line), 0 1px 0 var(--line); }
 .topic-num { font-family: var(--serif); font-style: italic; color: #9a7b3c; }
 .topic h3 { font-size: 1.25rem; margin: 10px 0 8px; }
 .topic p { color: var(--muted); font-size: 15px; }
