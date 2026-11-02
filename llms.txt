@@ -1,0 +1,20 @@
+# Quantelite
+
+> Quantelite is a premium 1:1 online tutoring practice specializing in AP and IB Mathematics, calculus, statistics and the mathematical foundations of AI and machine learning. It is led by Akash Gupta (B.Tech, IIT BHU; Master's in Artificial Intelligence, IIT Kharagpur), who has mentored 200+ students across 6+ countries. All sessions are live, 1:1 and online, scheduled across North American, UK and European, Middle East and Asia-Pacific time zones.
+
+## Programs
+
+- [AP Calculus AB & BC tutoring](https://thequantelite.com/ap-calculus-tutoring)
+- [AP Precalculus tutoring](https://thequantelite.com/ap-precalculus-tutoring)
+- [AP Statistics tutoring](https://thequantelite.com/ap-statistics-tutoring)
+- [IB Mathematics AA & AI tutoring (SL/HL)](https://thequantelite.com/ib-math-tutoring): in IB, "AI" means Applications and Interpretation
+- [University calculus tutoring](https://thequantelite.com/calculus-tutoring): customised to the student's university syllabus
+- [University statistics tutoring](https://thequantelite.com/statistics-tutoring): customised to the student's university syllabus
+- [Mathematics for machine learning, including linear algebra](https://thequantelite.com/math-for-machine-learning)
+- [AI & machine learning for kids and teens (ages 10-18)](https://thequantelite.com/ai-ml-for-kids): skills-based, not tied to any school board
+
+## Contact
+
+- Book a complimentary consultation: https://thequantelite.com/#contact
+- Email: akash@thequantelite.com
+- Mentor profile: https://www.linkedin.com/in/akash-gupta-384ba789/

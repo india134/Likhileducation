@@ -1,0 +1,16 @@
+# Canonical host: send www to the apex domain in one hop
+https://www.thequantelite.com/*  https://thequantelite.com/:splat  301!
+http://www.thequantelite.com/*   https://thequantelite.com/:splat  301!
+
+# Old links that pointed at the original photo
+/Akash_Professional.png  /akash-gupta.jpg  301
+
+# Clean URLs for landing pages
+/ai-ml-for-kids  /ai-ml-for-kids.html  200
+/ap-calculus-tutoring  /ap-calculus-tutoring.html  200
+/ap-precalculus-tutoring  /ap-precalculus-tutoring.html  200
+/ap-statistics-tutoring  /ap-statistics-tutoring.html  200
+/calculus-tutoring  /calculus-tutoring.html  200
+/ib-math-tutoring  /ib-math-tutoring.html  200
+/math-for-machine-learning  /math-for-machine-learning.html  200
+/statistics-tutoring  /statistics-tutoring.html  200

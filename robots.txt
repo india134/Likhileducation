@@ -1,0 +1,51 @@
+# Quantelite - https://thequantelite.com
+# All public pages may be crawled by search engines, AI search and answer
+# engines, and AI model-training crawlers.
+
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI search / answer engines (live retrieval and citations)
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# AI model training (explicitly permitted by Quantelite)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://thequantelite.com/sitemap.xml
